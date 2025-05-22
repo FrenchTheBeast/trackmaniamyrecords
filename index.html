@@ -48,7 +48,7 @@
         if (!pseudo) return alert("Please enter a username!");
 
         try {
-            const res = await fetch(`https://mytrackmaniarecords.onrender.com/api/records?pseudo=${encodeURIComponent(pseudo)}\``);
+            const res = await fetch(`https://mytrackmaniarecords.onrender.com/api/records?pseudo=${encodeURIComponent(pseudo)}`);
             const data = await res.json();
 
             console.log("Records reçus :", data);

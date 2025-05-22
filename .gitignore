@@ -1,0 +1,21 @@
+# Ne pas versionner le script de déploiement
+deploy-gh-pages.sh
+
+# Ne pas commit le fichier d'incrémentation de version
+.deploy_version
+
+# Fichiers système / OS
+.DS_Store
+Thumbs.db
+
+# VSCodium / VSCode config files
+.vscode/
+.idea/
+
+# Fichiers temporaires
+*.log
+*.tmp
+
+# Node/npm si jamais tu ajoutes un tool JS plus tard
+node_modules/
+dist/
