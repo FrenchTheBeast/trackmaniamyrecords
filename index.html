@@ -2,77 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Trackmania Search Records</title>
     <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+<footer class="disclaimer">
+    We are not affiliated with or endorsed by Nadeo or Ubisoft. All relevant trademarks belong to their respective owners.
+</footer>
 <body>
-<div class="container">
-    <a href="https://github.com/" target="_blank" class="github-badge">
-        <span class="dot"></span> Project on Github
-    </a>
+    <div class="container">
+        <a href="https://github.com/" target="_blank" class="github-badge">
+            <span class="dot"></span> Project on Github
+        </a>
 
-    <h1 class="animated-title" id="title">
-    </h1>
+        <h1 class="animated-title" id="title">
+        </h1>
 
-    <input type="text" placeholder="Enter username..." class="input" />
-    <button class="btn">Search</button>
-</div>
+        <input type="text" placeholder="Enter username..." class="input" />
+        <button class="btn">Search</button>
+    </div>
 
-<script>
-    const titleText = "Trackmania\nSearch Records";
-    const titleElement = document.getElementById("title");
+    <script>
+        const titleText = "Trackmania\nSearch Records";
+        const titleElement = document.getElementById("title");
 
-    function animateTitle(text, element) {
-        element.innerHTML = '';
-        let delay = 0;
-        text.split('').forEach((char, i) => {
-            const span = document.createElement('span');
-            span.textContent = char;
-            span.style.animationDelay = `${delay}s`;
-            span.classList.add('letter');
-            element.appendChild(span);
-            delay += char === ' ' ? 0.01 : 0.05;
-            if (char === '\n') element.appendChild(document.createElement('br'));
-        });
-    }
-
-    animateTitle(titleText, titleElement);
-
-    const input = document.querySelector('.input');
-    const button = document.querySelector('.btn');
-
-    button.addEventListener('click', async () => {
-        const pseudo = input.value.trim();
-        if (!pseudo) return alert("Please enter a username!");
-
-        try {
-            const res = await fetch(`https://trackmania.reyzosfx.workers.dev/?pseudo=${encodeURIComponent(pseudo)}`);
-            const data = await res.json();
-
-            console.log("Records reçus :", data);
-
-            let html = "<h2>Résultats pour " + pseudo + ":</h2><ul>";
-            data.forEach(record => {
-                html += `<li><strong>${record.mapName}</strong> - ${record.time}s</li>`;
+        function animateTitle(text, element) {
+            element.innerHTML = '';
+            let delay = 0;
+            text.split('').forEach((char, i) => {
+                const span = document.createElement('span');
+                span.textContent = char;
+                span.style.animationDelay = `${delay}s`;
+                span.classList.add('letter');
+                element.appendChild(span);
+                delay += char === ' ' ? 0.01 : 0.05;
+                if (char === '\n') element.appendChild(document.createElement('br'));
             });
-            html += "</ul>";
-
-            let results = document.getElementById("results");
-            if (!results) {
-                results = document.createElement("div");
-                results.id = "results";
-                document.body.appendChild(results);
-            }
-            results.innerHTML = html;
-
-        } catch (e) {
-            console.error("Erreur :", e);
-            alert("Erreur de communication avec le serveur.");
         }
-    });
-</script>
+
+        animateTitle(titleText, titleElement);
+
+        const input = document.querySelector('.input');
+        const button = document.querySelector('.btn');
+
+        button.addEventListener('click', async () => {
+            const pseudo = input.value.trim();
+            if (!pseudo) return alert("Please enter a username!");
+
+            try {
+                const res = await fetch(`https://trackmania.reyzosfx.workers.dev/?pseudo=${encodeURIComponent(pseudo)}`);
+                const data = await res.json();
+
+                console.log("Records reçus :", data);
+
+                let html = "<h2>Résultats pour " + pseudo + ":</h2><ul>";
+                data.forEach(record => {
+                    html += `<li><strong>${record.mapName}</strong> - ${record.time}s</li>`;
+                });
+                html += "</ul>";
+
+                let results = document.getElementById("results");
+                if (!results) {
+                    results = document.createElement("div");
+                    results.id = "results";
+                    document.body.appendChild(results);
+                }
+                results.innerHTML = html;
+
+            } catch (e) {
+                console.error("Erreur :", e);
+                alert("Erreur de communication avec le serveur.");
+            }
+        });
+    </script>
 
 </body>
 </html>
