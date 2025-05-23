@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -6,14 +6,37 @@
     <title>Trackmania - Error</title>
     <link rel="stylesheet" href="../styles.css" />
 </head>
-<footer class="disclaimer">
-    We are not affiliated with or endorsed by Nadeo or Ubisoft. All relevant trademarks belong to their respective owners.
-</footer>
 <body>
     <div class="container">
-        <h1 class="animated-title"> Player Not Found</h1>
-        <p style="color:#ccc; margin-top: 10px;">The player name you entered could not be found or an error occurred (more likely).</p>
+        <h1 class="animated-title">Player Not Found</h1>
+        <p style="color:#ccc; margin-top: 10px;">
+            The player name you entered could not be found or an error occurred (more likely).
+        </p>
+        <p id="errorMessage" style="color:#888; font-size: 0.75rem;"></p>
+
         <a href="../index.html" class="btn" style="margin-top:20px;">Back to Search</a>
     </div>
+
+    <script>
+        const hash = location.hash.replace("#", "").trim();
+        const errorPara = document.getElementById("errorMessage");
+
+        if (hash) {
+            fetch(`https://trackmania.reyzosfx.workers.dev/?pseudo=${encodeURIComponent(hash)}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (data?.error) {
+                        errorPara.textContent = `"${data.error}"`;
+                    }
+                })
+                .catch(err => {
+                    errorPara.textContent = "Could not load error details.";
+                });
+        }
+    </script>
+
+    <footer class="disclaimer">
+        We are not affiliated with or endorsed by Nadeo or Ubisoft. All relevant trademarks belong to their respective owners.
+    </footer>
 </body>
 </html>
