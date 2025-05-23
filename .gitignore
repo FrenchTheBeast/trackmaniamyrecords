@@ -1,10 +1,8 @@
-# Ne pas versionner le script de déploiement
+# Local Deploy
 deploy-gh-pages.sh
-
-# Ne pas commit le fichier d'incrémentation de version
 .deploy_version
 
-# Fichiers système / OS
+# OS
 .DS_Store
 Thumbs.db
 
@@ -12,10 +10,10 @@ Thumbs.db
 .vscode/
 .idea/
 
-# Fichiers temporaires
+# Temp files
 *.log
 *.tmp
 
-# Node/npm si jamais tu ajoutes un tool JS plus tard
+# NPM/ Node
 node_modules/
 dist/
