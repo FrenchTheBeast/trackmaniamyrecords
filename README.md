@@ -9,6 +9,7 @@
 - ⚙️ **Java Backend** — Private repository containing the Java-based backend (**soon to be available**), hosted on [Render](https://render.com).
 - ☁️ **Cloudflare Worker** — Acts as a proxy between the frontend and Nadeo's API to handle CORS and token logic.
 - 📦 **Trackmania APIs** — Used to fetch player information and leaderboard records.
+- 🗂️ **Database** — Using NocoDB and Postgres to stock player's record / Mapgroup to ensure that we don't overload Trackmania's API 
 
 ---
 
