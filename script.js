@@ -1,4 +1,3 @@
-// Animation du titre
 const titleText = "Trackmania\nSearch Records";
 const titleElement = document.getElementById("title");
 
@@ -18,7 +17,7 @@ function animateTitle(text, element) {
 
 animateTitle(titleText, titleElement);
 
-// Interaction avec le backend
+// Backend interaction -> Calling trackmania.reyzosfx.workers.dev which handle all the API request -> Workers call our Java Backend 
 const input = document.querySelector('.input');
 const button = document.querySelector('.btn');
 
@@ -35,9 +34,9 @@ button.addEventListener('click', async () => {
             return;
         }
 
-        console.log("Records reçus :", data);
+        console.log("Records reÃ§us :", data);
 
-        let html = "<h2>Résultats pour " + pseudo + ":</h2><ul>";
+        let html = "<h2>RÃ©sultats pour " + pseudo + ":</h2><ul>";
         data.forEach(record => {
             html += `<li><strong>${record.mapName}</strong> - ${record.time}s</li>`;
         });
