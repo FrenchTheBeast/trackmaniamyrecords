@@ -18,9 +18,9 @@
     </div>
 
     <script>
+        // Get the error message received by workers on the JSON Body (helps debugging, which I had to do a lot)
         const hash = location.hash.replace("#", "").trim();
         const errorPara = document.getElementById("errorMessage");
-
         if (hash) {
             fetch(`https://trackmania.reyzosfx.workers.dev/?pseudo=${encodeURIComponent(hash)}`)
                 .then(res => res.json())
