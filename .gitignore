@@ -1,8 +1,13 @@
-# Local Scripts
+# Backend
 backend/build.sh
 backend/commit.sh
 backend/deploy.sh
 backend/version.txt
+
+#Misc
+.github
+
+#public
 public/deploy-gh-pages.sh
 public/.deploy_version
 deploy-gh-pages.sh
