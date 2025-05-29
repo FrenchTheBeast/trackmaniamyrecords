@@ -3,6 +3,7 @@ backend/build.sh
 backend/commit.sh
 backend/deploy.sh
 backend/version.txt
+backend/out/
 
 #Misc
 .github
