@@ -1,0 +1,24 @@
+# Local Scripts
+backend/build.sh
+backend/commit.sh
+backend/deploy.sh
+backend/version.txt
+public/deploy-gh-pages.sh
+public/.deploy_version
+deploy-gh-pages.sh
+
+#Git
+public/.git
+public/.github
+
+# IDE
+backend/.idea/
+backend/*.iml
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs, caches, backups
+*.log
+*.tmp
