@@ -30,25 +30,13 @@ button.addEventListener('click', async () => {
         const data = await res.json();
 
         if (data.error) {
-            window.location.href = "records/error.html";
+            window.location.href = `records/error.html?pseudo=${encodeURIComponent(pseudo)}`;
             return;
         }
 
         console.log("Records reçus :", data);
 
-        let html = "<h2>Résultats pour " + pseudo + ":</h2><ul>";
-        data.forEach(record => {
-            html += `<li><strong>${record.mapName}</strong> - ${record.time}s</li>`;
-        });
-        html += "</ul>";
-
-        let results = document.getElementById("results");
-        if (!results) {
-            results = document.createElement("div");
-            results.id = "results";
-            document.body.appendChild(results);
-        }
-        results.innerHTML = html;
+        window.location.href = `record/results.html?pseudo=${encodeURIComponent(pseudo)}`;
 
     } catch (e) {
         console.error("Erreur :", e);

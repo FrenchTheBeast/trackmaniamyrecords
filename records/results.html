@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trackmania Records</title>
+  <link rel="stylesheet" href="../../styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container" id="results-container">
+    <h1 class="animated-title" id="title">Trackmania Records</h1>
+    <div id="results">Loading records...</div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const pseudo = params.get("pseudo");
+
+    const titleElement = document.getElementById("title");
+    function animateTitle(text, element) {
+        element.innerHTML = '';
+        let delay = 0;
+        text.split('').forEach((char) => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            span.style.animationDelay = `${delay}s`;
+            span.classList.add('letter');
+            element.appendChild(span);
+            delay += char === ' ' ? 0.01 : 0.05;
+            if (char === '\n') element.appendChild(document.createElement('br'));
+        });
+    }
+    animateTitle("Trackmania\nRecords", titleElement);
+
+    if (!pseudo) {
+      document.getElementById("results").innerHTML = "❌ No username given.";
+    } else {
+      fetch(`https://trackmania.reyzosfx.workers.dev/?pseudo=${encodeURIComponent(pseudo)}`)
+        .then(res => res.json())
+        .then(data => {
+          if (data.error || !Array.isArray(data)) {
+            document.getElementById("results").innerHTML = "❌ No record found.";
+            return;
+          }
+
+          let html = `<h2>Records for ${pseudo} :</h2><ul style="text-align: left;">`;
+          data.forEach(record => {
+            html += `<li><strong>${record.mapName}</strong> - ${record.time}s</li>`;
+          });
+          html += "</ul>";
+          document.getElementById("results").innerHTML = html;
+        })
+        .catch(err => {
+          console.error("Error :", err);
+          document.getElementById("results").innerHTML = "❌ Cannot fetch results.";
+        });
+    }
+  </script>
+</body>
+</html>
