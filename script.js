@@ -36,7 +36,7 @@ button.addEventListener('click', async () => {
 
         console.log("Records reçus :", data);
 
-        window.location.href = `record/results.html?pseudo=${encodeURIComponent(pseudo)}`;
+        window.location.href = `records/results.html?pseudo=${encodeURIComponent(pseudo)}`;
 
     } catch (e) {
         console.error("Erreur :", e);
