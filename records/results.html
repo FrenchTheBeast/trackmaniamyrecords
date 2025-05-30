@@ -10,7 +10,7 @@
 <body>
   <div class="container" id="results-container">
     <h1 class="animated-title" id="title">Trackmania Records</h1>
-    <div id="results">Loading records...</div>
+    <div id="results" class="results-container">Loading records...</div>
   </div>
 
   <script>
@@ -47,7 +47,7 @@
           let html = `<h2>Records for <span style="color: #00ffc8">${pseudo}</span>:</h2><ul style="text-align: left; list-style: none; padding: 0;">`;
           data.forEach(record => {
             const seconds = (record.onlineRecordTime / 1000).toFixed(3);
-            const link = `https://trackmania.exchange/map/${record.trackID}`;
+            const link = `https://trackmania.exchange/mapshow/${record.trackID}`;
             html += `<li><strong><a href="${link}" target="_blank">${record.trackName}</a></strong> — ${seconds}s</li>`;
           });
           html += "</ul>";
