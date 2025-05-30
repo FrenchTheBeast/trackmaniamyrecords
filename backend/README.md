@@ -17,7 +17,6 @@
 
 > [!WARNING]\
 > Please take note that Nadeo's API are subject to change, refer to the documentation.
-<br>
 
 * Clone this repo :  ```git git clone https://github.com/FrenchTheBeast/trackmaniamyrecords/ ```
 * Use IntelliJ/Vscode/Eclipse and create a project with all thoses classes. **This will create a /out/ folder**
