@@ -14,7 +14,7 @@ export default {
         }
 
         try {
-            // Call our backend API on Render 
+            // Call our backend API on Render (first call will take 30s)
             const recordsRes = await fetch(`https://mytrackmaniarecords.onrender.com/api/records?pseudo=${encodeURIComponent(pseudo)}`);
             const raw = await recordsRes.text();
 
