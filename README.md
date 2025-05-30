@@ -69,14 +69,14 @@
 ```UBI_EMAIL``` — Ubisoft email of the second account used for token requests <br>
 ```UBI_PASSWORD``` — Ubisoft password of the second account used for token requests <br>
 
+##
+
 > [!NOTE]\
 >  During project release, one of the endpoints to retrieve Trackmania player's record broke. The only workaround — if you don't have a more robust database — is to ask the user for Ubisoft OAuth
 >  authentication and use this [endpoint](https://webservices.openplanet.dev/core/records/account-records-v2) :
 >  ```http
 >  GET https://prod.trackmania.core.nadeo.online/v2/accounts/{accountId}/mapRecords?gameMode={gameMode}
 >  ```
-
-
 
 
 ---
