@@ -1,10 +1,16 @@
 <p align="center">
  <img width="300px" src="https://cdn2.steamgriddb.com/logo/369a226ba5264d149663022a90786d1f.png" align="center" alt="GitHub Readme Stats" />
  <h3 align="center"> A lightweight tool to search any player's records on any map using the official Trackmania & Nadeo APIs.</h3>
+ <div align="center">
+  <p align="center">
+    <a href="https://frenchthebeast.github.io/trackmaniamyrecords/"><strong>Visit the website »</strong></a>
 </p>
+ </div>
 <br>
 
 [![FWH - License](https://img.shields.io/pypi/l/tmrl?color=blue)]([https://github.com/trackmania-rl/tmrl/blob/master/LICENSE](https://github.com/FrenchTheBeast/trackmaniamyrecords/blob/main/LICENSE))
+![version](https://img.shields.io/badge/version-0.1.1-red)
+![uptime](https://img.shields.io/badge/Website%20Uptime-100%25-brightgreen)
 
 ---
 
