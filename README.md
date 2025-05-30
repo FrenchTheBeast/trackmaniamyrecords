@@ -50,7 +50,7 @@
 > **IMPORTANT:** Please take note that Nadeo's API are subject to change, refer to the ressource below.
 
 [OpenPlanet](https://webservices.openplanet.dev/oauth/auth)  — Documentation for Trackmania's API <br>
-[Trackmania Doc](https://doc.trackmania.com/)  — Official Trackmania Documentation
+[Trackmania Doc](https://doc.trackmania.com/)  — Official Trackmania Documentation <br>
 [ManiaExchange](https://api2.mania.exchange/)  — Documentation and API for ManiaExchange <br>
 [Trackmania API](https://api.trackmania.com/)  — Official Ubisoft site to obtain an OAuth2 access token <br>
 [NocoDB](https://github.com/nocodb/nocodb)     — Open-source database to save records / player times / etc. <br>
