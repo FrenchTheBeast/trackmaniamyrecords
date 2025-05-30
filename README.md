@@ -57,7 +57,7 @@
 [Railway](https://railway.com/) — Cloud platform to host our database <br>
 [Render](https://render.com/)                  — Cloud platform to host our backend<br>
 [Cloudflare Workers](https://workers.cloudflare.com/) — Proxy between our backend and frontend<br>
-[JackTerok / TMWorldsRecord](https://tmworldrecords.net/)
+[JackTerok / TMWorldsRecord](https://tmworldrecords.net/) — Inspired by Jack Terok project
 
 
 ## 🔑 Environment Variables 
