@@ -1,6 +1,6 @@
 <p align="center">
  <img width="300px" src="https://cdn2.steamgriddb.com/logo/369a226ba5264d149663022a90786d1f.png" align="center" alt="GitHub Readme Stats" />
- <h3 align="center"> A lightweight tool to search any player's records on any map using the official Trackmania & Nadeo APIs.</h3>
+ <h3 align="center"> Setup Guide to run the Backend</h3>
  <div align="center">
   <p align="center">
     <a href="https://frenchthebeast.github.io/trackmaniamyrecords/"><strong>Visit the website »</strong></a>
